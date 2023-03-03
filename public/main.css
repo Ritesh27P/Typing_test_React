@@ -1,0 +1,25 @@
+input {
+    color: black;
+    background-color: rgb(64, 226, 43);
+    border: medium solid transparent;
+    outline: none;
+    font-size: 100px;
+    height: 300px;
+    /* width: fit-content; */
+    width: 50%;
+    margin-top: 12%;
+    text-align: right;
+
+    /* caret-color: transparent; */
+  }
+
+
+p {
+    color: black;
+    font-size: 100px;
+    margin-top: 500px;
+}
+
+.textF {
+    margin-top: 20%;
+}
