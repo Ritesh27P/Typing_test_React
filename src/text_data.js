@@ -7,4 +7,4 @@ const d6 = "The moon is a natural satellite that orbits around the Earth, and is
 
 const list = [d1, d2, d3, d4, d5, d6]
 
-export default list[Math.floor(Math.random(0, 7))]
+export default list[Math.floor(Math.random(0, 7)*10)]

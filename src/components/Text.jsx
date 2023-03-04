@@ -2,9 +2,10 @@ import { useState } from "react"
 import data from "../text_data"
 
 const Text = ()=>{
-    const [text, setText] = useState("")
-    let [word, setWord] = useState("")
+    let [message, setMessage] = useState("Ritesh")
+    let [words, setWords] = useState(data)
     let [list, setList] = useState([])
+    let [dataList, setDataList] = useState(data.split(" "))
     let speacial_key = [190, 191, 222, 188]
 
     // Input's style
@@ -12,35 +13,40 @@ const Text = ()=>{
         width: "50%"
     }
 
+    let list_data = data.split(" ")
+    setMessage(list_data[0])
+
     // Handing key press
     const handle_key = (event)=>{
-        const keyPress = event.key 
+        const keyPress = event.key
+        
+        let Message = (event.target.value)
+        let Message_list = Message.split(" ")
+        let last_word = Message_list.at(-1)
+
+        if (message.substring(0, 1) === event.key){
+            setMessage(prevData=>{
+                return prevData.substring(1);
+            })
+            setWords(prevData=>{
+                return prevData.substring(1);
+            })
+        }
         if (event.keyCode === 32){
             console.log(list)
-            setList(prevData=>{
-                return [...prevData, word];
+            setDataList(prevData=>{
+                return prevData.shift()
             })
+            
+        }
 
-            // reseting the temp word
-            setWord("");
-        }
-        
-        if ((event.keyCode === 8) & (word.length > 0)) {
-            setWord(prevData=>{
-                return prevData.substring(0, prevData.length -1);
-            })
-        } else if ((event.keyCode > 64) | (event.keyCode < 91) | (event.keyCode in speacial_key)) {
-            setWord(prevData=>{
-                return (prevData + keyPress)
-            })
-        }
         
     }
 
     return <div>
                 <div className="row textF">
                     <input className="col-6" style={inputStyle} onKeyDown={handle_key} />
-                    <p className="col-6" style={{marginTop: "75px"}}>{data.substring(0, 12)}</p>
+                    <p className="col-6" style={{marginTop: "75px"}}>{data.substring(0, 15)}</p>
                 </div>
                 
             </div> 
