@@ -28,7 +28,7 @@ const Text = ()=>{
             setMessage(prevData=>{
                 return prevData.substring(1);
             })
-            setWords(prevData=>{
+            setWords(prevData=>{ 
                 return prevData.substring(1);
             })
         }
