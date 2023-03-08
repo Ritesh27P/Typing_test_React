@@ -1,25 +1,27 @@
+body {
+    background-image: linear-gradient(to right, #B5F1CC, #E5FDD1);
+}
+
 input {
     color: black;
-    background-color: rgb(64, 226, 43);
+    background-color: transparent;
     border: medium solid transparent;
     outline: none;
     font-size: 100px;
     height: 300px;
-    /* width: fit-content; */
     width: 50%;
-    margin-top: 12%;
+    margin-top: 4%;
     text-align: right;
-
-    /* caret-color: transparent; */
+    word-wrap: break-word;
   }
 
 
 p {
     color: black;
     font-size: 100px;
-    margin-top: 500px;
+    margin-top: 4%;
 }
 
 .textF {
-    margin-top: 20%;
+    margin-top: 8%;
 }

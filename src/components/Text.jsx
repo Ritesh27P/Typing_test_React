@@ -1,20 +1,13 @@
 import { useState } from "react"
 import data from "../text_data"
 
+
 const Text = ()=>{
-    let [message, setMessage] = useState("Ritesh")
-    let [words, setWords] = useState(data)
-    let [list, setList] = useState([])
-    let [dataList, setDataList] = useState(data.split(" "))
+    let [correctChar, setCorrectChar] = useState(true)
+    let [sentenceArr, setSentenceArr] = useState(data.split(" "))
+    let [sentence, setSentence] = useState(data)
     let speacial_key = [190, 191, 222, 188]
 
-    // Input's style
-    const inputStyle = {
-        width: "50%"
-    }
-
-    let list_data = data.split(" ")
-    setMessage(list_data[0])
 
     // Handing key press
     const handle_key = (event)=>{
@@ -24,31 +17,32 @@ const Text = ()=>{
         let Message_list = Message.split(" ")
         let last_word = Message_list.at(-1)
 
-        if (message.substring(0, 1) === event.key){
-            setMessage(prevData=>{
-                return prevData.substring(1);
+        if (keyPress === sentence[0]){
+            setSentence(prevData=>{
+                return prevData.slice(1);
             })
-            setWords(prevData=>{ 
-                return prevData.substring(1);
-            })
-        }
-        if (event.keyCode === 32){
-            console.log(list)
-            setDataList(prevData=>{
-                return prevData.shift()
-            })
-            
+            setCorrectChar(true)
+        } else {
+            setCorrectChar(false)
         }
 
-        
+        // If pressed space bar 
+        if (event.keyCode === 32){
+            if (last_word === sentenceArr[0]){
+                console.log("Same word");
+                setSentenceArr(prevData=>{
+                    prevData.shift()
+                    return prevData;
+                })
+            }
+        }
     }
 
     return <div>
                 <div className="row textF">
-                    <input className="col-6" style={inputStyle} onKeyDown={handle_key} />
-                    <p className="col-6" style={{marginTop: "75px"}}>{data.substring(0, 15)}</p>
-                </div>
-                
+                    <input className="col-6" onKeyDown={handle_key} placeholder="Click here"/>
+                    <p className="col-6" style={{marginTop: "75px"}}>{sentence}</p>
+                </div>                
             </div> 
 
 }
