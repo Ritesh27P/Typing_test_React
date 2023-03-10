@@ -3,11 +3,11 @@ body {
 }
 
 input {
-    color: black;
+    color: #BAD7E9;
     background-color: transparent;
     border: medium solid transparent;
     outline: none;
-    font-size: 100px;
+    font-size: 50px;
     height: 300px;
     width: 50%;
     margin-top: 4%;
@@ -17,11 +17,12 @@ input {
 
 
 p {
-    color: black;
-    font-size: 100px;
+    color: #2B3467;
+    font-size: 50px;
     margin-top: 4%;
 }
 
 .textF {
-    margin-top: 8%;
+    margin-top: 2%;
 }
+
