@@ -22,7 +22,11 @@ p {
     margin-top: 4%;
 }
 
+span {
+    color: #66347F;
+    text-decoration: underline;
+}
+
 .textF {
     margin-top: 2%;
 }
-

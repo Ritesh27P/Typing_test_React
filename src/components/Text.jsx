@@ -16,8 +16,6 @@ const Text = (props)=>{
         let Message = (event.target.value)
         let Message_list = Message.split(" ")
         let last_word = Message_list.at(-1)
-
-
         props.st_func()
 
         if (keyPress === sentence[0]){
@@ -50,10 +48,9 @@ const Text = (props)=>{
     return <div>
                 <div className="row textF">
                     <input className="col-6" onKeyDown={handle_key} placeholder="Click here and start Typing"/>
-                    <p className="col-6" style={{marginTop: "115px"}}>{sentence.slice(0, 20)}</p>
+                    <p className="col-6 data" style={{marginTop: "115px"}}><span>{sentence.slice(0,1)}</span>{sentence.slice(1, 30)}</p>
                 </div>                
             </div> 
-
 }
 
 export default Text;
