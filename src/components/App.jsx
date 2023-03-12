@@ -21,7 +21,10 @@ const App = ()=>{
 
 
     return <div>
-        <h1 className='time'>{time}</h1>
+
+        <div>
+            <h3>{time}</h3>
+        </div>
         <Text time={time} st_func={writingStopped} intervalId={nIntervalId}/>
     </div>
 }
