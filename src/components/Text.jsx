@@ -1,5 +1,6 @@
-import { useState } from "react"
-import data from "../text_data"
+import { useState } from "react";
+import data from "../text_data";
+import Navbar from "./Navbar";
 
 // Make 5 errors in typing and game over
 
@@ -65,6 +66,7 @@ const Text = (props)=>{
         setAccuracy(prevData=>{
             if (props.time > 0){
                 return (100 - (word * (wrongTyped/word)))
+                // return 
             }
         })
 
@@ -76,7 +78,7 @@ const Text = (props)=>{
 
     return <div>
                 <div className="row textF">
-                    <p>{WPM} {word} {wrongTyped} {accuracy}%</p>
+                    <Navbar WPM={WPM} time={props.time} Accuracy={accuracy} />
                     <input className="col-6" onKeyDown={handle_key} placeholder="Click here and start Typing"/>
                     <p className="col-6 data" style={{marginTop: "115px"}}><span>{sentence.slice(0,1)}</span>{sentence.slice(1, 30)}</p>
                 </div>                

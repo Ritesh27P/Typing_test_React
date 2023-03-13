@@ -21,10 +21,6 @@ const App = ()=>{
 
 
     return <div>
-
-        <div>
-            <h3>{time}</h3>
-        </div>
         <Text time={time} st_func={writingStopped} intervalId={nIntervalId}/>
     </div>
 }
