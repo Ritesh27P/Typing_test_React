@@ -64,7 +64,7 @@ const Text = (props)=>{
         // Calculating Accuracy
         setAccuracy(prevData=>{
             if (props.time > 0){
-                return (100 - (word * (wrongTyped/100)))
+                return (100 - (word * (wrongTyped/word)))
             }
         })
 
