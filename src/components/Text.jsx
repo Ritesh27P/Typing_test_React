@@ -59,13 +59,15 @@ const Text = (props)=>{
         // Calcualting words per minute
         setWPM(prevData=>{
             if (props.time > 0){
-                return Math.floor(((word/props.time) * 60)/5)
+                return Math.floor(((word/props.time) * 60)/10)
             }
         })
         // Calculating Accuracy
         setAccuracy(prevData=>{
             if (props.time > 0){
-                return (100 - (word * (wrongTyped/word)))
+                var gpm = ((word - wrongTyped)* 60)/10
+                return (gpm)* (100/WPM)
+                // return (100 - (word * (wrongTyped/word)))
                 // return 
             }
         })
