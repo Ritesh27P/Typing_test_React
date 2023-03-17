@@ -2,8 +2,6 @@ import { useState } from "react";
 import data from "../text_data";
 import Navbar from "./Navbar";
 
-// Make 5 errors in typing and game over
-
 const Text = (props)=>{
     let [sentenceArr, setSentenceArr] = useState(data.split(" "))
     let [sentence, setSentence] = useState(data)
@@ -61,7 +59,7 @@ const Text = (props)=>{
             if (props.time > 0){
                 return Math.floor(((word/props.time) * 60)/10)
             }
-        })
+        })     
         // Calculating Accuracy
         setAccuracy(prevData=>{
             if (props.time > 0){
