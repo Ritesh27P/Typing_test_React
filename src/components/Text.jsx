@@ -78,7 +78,7 @@ const Text = (props)=>{
 
     return <div>
                 <div className="row textF">
-                    <Navbar WPM={WPM} time={props.time} Accuracy={accuracy} />
+                    <Navbar WPM={WPM} time={props.time}/>
                     <input className="col-6" onKeyDown={handle_key} placeholder="Click here and start Typing"/>
                     <p className="col-6 data" style={{marginTop: "115px"}}><span>{sentence.slice(0,1)}</span>{sentence.slice(1, 30)}</p>
                 </div>                
