@@ -6,7 +6,7 @@ const Navbar = (props)=>{
             <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
                 <li className="nav-item active">
-                <h4 className="nav-link">WPM: {props.WPM}<span class="sr-only">(current)</span></h4>
+                <h4 className="nav-link">WPM: {props.WPM}</h4>
                 </li>
             </ul>
             </div>
