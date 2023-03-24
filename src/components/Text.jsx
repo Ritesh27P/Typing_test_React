@@ -8,7 +8,6 @@ const Text = (props)=>{
     let [word, setWord] = useState(0)
     let [WPM, setWPM] = useState(0)
     let [wrongTyped, setWrongTyped] = useState(0)
-    let [accuracy, setAccuracy] = useState(0)
 
 
     // Handing key press
@@ -60,15 +59,6 @@ const Text = (props)=>{
                 return Math.floor(((word/props.time) * 60)/10)
             }
         })     
-        // Calculating Accuracy
-        setAccuracy(prevData=>{
-            if (props.time > 0){
-                var gpm = ((word - wrongTyped)* 60)/10
-                return (gpm)* (100/WPM)
-                // return (100 - (word * (wrongTyped/word)))
-                // return 
-            }
-        })
 
         if (props.time > 5) {
             clearInterval(props.nIntervalId);
