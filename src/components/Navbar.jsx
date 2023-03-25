@@ -8,6 +8,9 @@ const Navbar = (props)=>{
                 <li className="nav-item active">
                 <h4 className="nav-link">WPM: {props.WPM}</h4>
                 </li>
+                <li>
+                    {props.wrong}
+                </li>
             </ul>
             </div>
         </nav>
